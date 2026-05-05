@@ -370,7 +370,23 @@
       margin-top: var(--space-2);
     }
 
-
+    .repo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      margin-top: var(--space-2);
+      font-family: var(--font-mono);
+      font-size: var(--text-xs);
+      color: var(--color-text-faint);
+      border: 1px solid var(--color-divider);
+      border-radius: 4px;
+      padding: 3px 8px;
+      transition: color 180ms ease, border-color 180ms ease;
+    }
+    .repo-link:hover {
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
 
     /* Notes — title inline with tag */
     .note-row {
@@ -424,8 +440,9 @@
         <a href="#research" class="nav-link" data-section="research">Research</a>
         <a href="#projects" class="nav-link" data-section="projects">Projects</a>
         <a href="#notes"    class="nav-link" data-section="notes">Notes</a>
-        <a href="#"         class="nav-link" aria-label="Download CV">CV ↗</a>
+        <a href="cv.pdf" class="nav-link" aria-label="Download CV" target="_blank" rel="noopener noreferrer">CV ↗</a>
         <a href="https://github.com/briacSck" class="nav-link" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+        <a href="https://www.linkedin.com/in/briac-sockalingum-student-sciences-politiques-blockchain-technology-economics-/" class="nav-link" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
         <button id="theme-toggle" aria-label="Toggle color theme">
           <!-- Moon icon (shown in dark mode) -->
           <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -453,8 +470,7 @@
     <!-- ── Hero ──────────────────────────────────────────── -->
     <section id="hero" class="container">
       <div class="hero-inner">
-        <!-- Replace .avatar with <img src="photo.jpg" alt="Briac Sockalingum" style="width:80px;height:80px;border-radius:50%;object-fit:cover;filter:grayscale(1);"> -->
-        <div class="avatar" aria-hidden="true">photo</div>
+        <img src="photo.jpg" alt="Briac Sockalingum" class="avatar" style="border-radius:50%;object-fit:cover;object-position:center top;filter:grayscale(1);">
 
         <h1>Briac Sockalingum</h1>
 
@@ -469,7 +485,7 @@
         <p class="hero-contact">
           Paris · Sciences Po ·
           <a href="mailto:briac@berkeley.edu">briac@berkeley.edu</a> ·
-          <a href="#" aria-label="Download CV">CV ↗</a>
+          <a href="cv.pdf" aria-label="Download CV" target="_blank" rel="noopener noreferrer">CV ↗</a>
         </p>
       </div>
     </section>
@@ -499,6 +515,10 @@
             network effects and exchange-rate volatility in economies considering crypto
             as legal tender. Extended from a graduate-level IT economics seminar.
           </p>
+          <a href="https://github.com/briacSck/crypto-producer-theory" class="repo-link" target="_blank" rel="noopener noreferrer">
+            <svg width="13" height="13" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+            Repository
+          </a>
         </article>
 
       </div>
@@ -508,6 +528,27 @@
     <section id="projects" class="section-grid container">
       <h2 class="section-label">Startups & Projects</h2>
       <div class="section-content">
+
+        <article class="entry">
+          <h3>YIELD</h3>
+          <span class="tag">[DeFi · FinTech · 2026–present]</span>
+          <p class="meta">co-founder · Canopy Fellow at Founders Inc. ·
+            <a href="https://www.yield-ai.org/" target="_blank" rel="noopener noreferrer">Website ↗</a>
+          </p>
+          <p class="abstract">
+            At the micro level: 4.2M French SMEs leave operational surplus idle in bank accounts
+            yielding 1–2%, forgoing hundreds of basis points available in on-chain liquidity markets.
+            YIELD closes that gap — an AI-driven treasury platform that allocates cash into tokenized
+            financial products and DeFi liquidity pools (EUR &amp; USD, 4–8% APY) with one-click
+            approval, zero workflow change, and automatic accounting entries via PennyLane and ACD.
+            At the macro level: as monetary policy tightens and bank intermediation margins compress,
+            permissionless yield infrastructure built on open DeFi protocols becomes a structural
+            alternative to traditional cash management — not a crypto bet, but a redistribution of
+            carry from institutions to other economic agents like firms. Built leveraging the open-banking & DeFi ecosystem,
+            and tokenized money-market instruments; grew from ETHGlobal hackathon wins (SF &amp; Cannes) into a live product
+            now available in France.
+          </p>
+        </article>
 
         <article class="entry">
           <h3>CompasSup & Clerko</h3>
@@ -553,23 +594,10 @@
 
         <article class="entry">
           <div class="note-row">
-            <a href="#" class="note-title">On Agentic Traffic and the Open Web</a>
-            <span class="tag">[Apr 2025]</span>
+            <a href="https://www.aaweparis.org/bilingual-education/" class="note-title" target="_blank" rel="noopener noreferrer">Leveraging Bilingualism to Impact Your World</a>
+            <span class="tag">[op-ed · AAWE]</span>
           </div>
-        </article>
-
-        <article class="entry">
-          <div class="note-row">
-            <a href="#" class="note-title">What Mechanism Design Gets Right About AI Governance</a>
-            <span class="tag">[Jan 2025]</span>
-          </div>
-        </article>
-
-        <article class="entry">
-          <div class="note-row">
-            <a href="#" class="note-title">Why Economists Should Care About DeFi</a>
-            <span class="tag">[Nov 2024]</span>
-          </div>
+          <p class="meta">Association of American Women in Europe</p>
         </article>
 
       </div>
