@@ -114,4 +114,4 @@ Allow: /
 
 # ── Sitemap ──────────────────────────────────────────────────────────────────
 
-Sitemap: https://briac-sockalingum.com/sitemap.xml
+Sitemap: https://briacsck.github.io/briac-lp/sitemap.xml
