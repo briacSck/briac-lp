@@ -1,0 +1,6 @@
+.claude/
+.gstack/
+Briac_Sockalingum*
+*.DS_Store
+Thumbs.db
+node_modules/
