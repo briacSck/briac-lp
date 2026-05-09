@@ -28,7 +28,7 @@
       --font-body:    'Satoshi', 'Inter', sans-serif;
       --font-mono:    'Geist Mono', 'Fira Code', monospace;
 
-      --text-xs:   0.6875rem;  /* 11px */
+      --text-xs:   0.75rem;     /* 12px */
       --text-sm:   0.8125rem;  /* 13px */
       --text-base: 0.9375rem;  /* 15px */
       --text-lg:   1.125rem;   /* 18px */
@@ -248,8 +248,19 @@
       flex-shrink: 0;
     }
     /* Replace .avatar content with: <img src="photo.jpg" alt="Briac Sockalingum"> */
+    .avatar-mobile {
+      display: none;
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      filter: grayscale(1);
+      margin-bottom: var(--space-4);
+    }
     @media (max-width: 768px) {
       .avatar { display: none; }
+      .avatar-mobile { display: block; }
     }
 
     h1 {
@@ -511,6 +522,7 @@
     <section id="hero" class="container">
       <div class="hero-inner">
         <img src="photo.jpg" alt="Briac Sockalingum" class="avatar" style="border-radius:50%;object-fit:cover;object-position:center top;filter:grayscale(1);">
+        <img src="photo.jpg" alt="Briac Sockalingum" class="avatar-mobile">
 
         <h1>Briac Sockalingum</h1>
 
@@ -652,7 +664,8 @@
   <script>
     // ── Theme ──────────────────────────────────────────────
     (function() {
-      var stored = localStorage.getItem('theme');
+      var stored;
+      try { stored = localStorage.getItem('theme'); } catch(e) {}
       var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
       var theme = stored || (prefersDark ? 'dark' : 'light');
       document.documentElement.setAttribute('data-theme', theme);
@@ -662,7 +675,7 @@
       var current = document.documentElement.getAttribute('data-theme');
       var next = current === 'dark' ? 'light' : 'dark';
       document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('theme', next);
+      try { localStorage.setItem('theme', next); } catch(e) {}
     });
 
     // ── Active nav via IntersectionObserver ────────────────
